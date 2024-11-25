@@ -6,7 +6,7 @@
     margin-left: 200px;
 }
 .header{
-    background: linear-gradient(to top right, #1C75E9, #47A1F1);
+    background-image: linear-gradient(to right, #1C75E9, #47A1F1);
     height: 10vh;
     border-radius: 10px;
     display: flex;

@@ -35,6 +35,23 @@
     width: 8vw;
     text-decoration: none;
 }
+.selectedItem{
+        margin: 20px auto auto;
+        background-image: linear-gradient(to right, #1C75E9, #47A1F1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 15px;
+        width: 8vw;
+        text-decoration: none;
+}
+
+.selectedText{
+    display: flex;
+    justify-content: center;
+    color: white;
+}
 
 p{
     display: flex;

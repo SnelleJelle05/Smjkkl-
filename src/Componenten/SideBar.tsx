@@ -21,8 +21,8 @@ const SideBar: React.FC<BasicComponentProps> = ({title, pageNames, pageLinks}) =
                 <hr className={'line'}/>
 
 
-                <a href={pageLinks[0]} className={'items'}>
-                    <p>{pageNames[0]}</p>
+                <a href={pageLinks[0]} className={'selectedItem'}>
+                    <p className={'selectedText'}>{pageNames[0]}</p>
                 </a>
 
 
@@ -32,6 +32,10 @@ const SideBar: React.FC<BasicComponentProps> = ({title, pageNames, pageLinks}) =
 
                 <a href={pageLinks[2]} className={'items'}>
                     <p>{pageNames[2]}</p>
+                </a>
+
+                <a href={pageLinks[3]} className={'items'}>
+                    <p>{pageNames[3]}</p>
                 </a>
 
             </div>

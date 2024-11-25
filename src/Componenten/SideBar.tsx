@@ -15,7 +15,10 @@ const SideBar: React.FC<BasicComponentProps> = ({title, pageNames, pageLinks}) =
         <>
 
             <div className={"containerSideBar"}>
-                <h1>{title}</h1>
+
+                <h1 className="h1sidebar">{title}</h1>
+
+                <hr className={'line'}/>
 
 
                 <a href={pageLinks[0]} className={'items'}>

@@ -11,7 +11,8 @@ function AdminIndex() {
                 pageNames={["Studenten", "Archief", "uitloggen"]}
                 pageLinks={["#", "#", "#"]}
             />
-            <Data Students="Jelle"/>
+
+            <Data Title="Alle Actieve Studenten"/>
         </div>
     );
 }

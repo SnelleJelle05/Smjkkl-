@@ -1,0 +1,83 @@
+.ProjectAanmaakContainer {
+    background: #FFFFFF;
+    height: 95vh;
+    width: 85vw;
+    border-radius: 10px;
+    margin-left: 200px;
+
+}
+
+.header {
+    background-image: linear-gradient(to right, #1C75E9, #47A1F1);
+    height: 10vh;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.h1Data {
+    margin: auto;
+    color: white;
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.aanmaakForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+label {
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+textarea {
+    resize: none;
+}
+
+.submitButton {
+    padding: 10px 20px;
+    background-color: #1C75E9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.submitButton:hover {
+    background-color: #145CB3;
+}
+
+select {
+    width: 105%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+select:focus {
+    outline: none;
+    border-color: #1C75E9;
+}

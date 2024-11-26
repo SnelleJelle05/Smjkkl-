@@ -1,5 +1,6 @@
 import './App.css';
-import StudentenIndex from "./Studenten/StudentenIndex";
+import StudentenIndex from "./Projecten/ProjectenIndex";
+import ProjectAanmaken from "./Projecten/ProjectAanmaken";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -9,6 +10,8 @@ function App() {
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<StudentenIndex />}>
+                    </Route>
+                    <Route path="/aanmaak" element={<ProjectAanmaken />}>
                     </Route>
                 </Routes>
             </BrowserRouter>

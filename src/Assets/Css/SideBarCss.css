@@ -41,3 +41,8 @@ p{
     justify-content: center;
     color: black;
 }
+
+.selected {
+    background: linear-gradient(to top right, #1C75E9, #47A1F1);
+    color: white;
+}

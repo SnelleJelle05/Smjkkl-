@@ -1,43 +1,35 @@
-import React from 'react';
+import * as React from 'react';
 import "../Assets/Css/SideBarCss.css";
 
 interface BasicComponentProps {
-    // Define your props here
     title: string;
     pageNames: string[];
     pageLinks: string[];
-
+    selectedPage: number; 
+    onPageChange?: (pageIndex: number) => void; 
 }
 
-
-const SideBar: React.FC<BasicComponentProps> = ({title, pageNames, pageLinks}) => {
+export const SideBar = (props: BasicComponentProps) => {
     return (
-        <>
+        <div className={"containerSideBar"}>
+            <h1 className="h1sidebar">{props.title}</h1>
+            <hr className={'line'}/>
 
-            <div className={"containerSideBar"}>
-
-                <h1 className="h1sidebar">{title}</h1>
-
-                <hr className={'line'}/>
-
-
-                <a href={pageLinks[0]} className={'items'}>
-                    <p>{pageNames[0]}</p>
+            {props.pageNames.map((pageName, index) => (
+                <a 
+                    key={index} 
+                    href={props.pageLinks[index]} 
+                    className={`items ${props.selectedPage === index ? 'selected' : ''}`}
+                    onClick={(e) => {
+                        e.preventDefault(); 
+                        if (props.onPageChange) {
+                            props.onPageChange(index);
+                        }
+                    }}
+                >
+                    <p className={`${props.selectedPage === index ? 'selected' : ''}`}>{pageName}</p>
                 </a>
-
-
-                <a href={pageLinks[1]} className={'items'}>
-                    <p>{pageNames[1]}</p>
-                </a>
-
-                <a href={pageLinks[2]} className={'items'}>
-                    <p>{pageNames[2]}</p>
-                </a>
-
-            </div>
-
-        </>
+            ))}
+        </div>
     );
 };
-
-export default SideBar;

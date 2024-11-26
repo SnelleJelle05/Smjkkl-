@@ -1,11 +1,9 @@
-import './App.css';
-import AdminIndex from "./Admin/AdminIndex";
+import { AdminIndex } from "./Admin/AdminIndex";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-function App() {
+export const App = () => {
     return (
         <div className="App">
-            {/* Example of including a link tag for an external resource */}
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<AdminIndex />}>
@@ -14,6 +12,4 @@ function App() {
             </BrowserRouter>
         </div>
     );
-}
-
-export default App;
+};

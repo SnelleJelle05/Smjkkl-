@@ -11,10 +11,13 @@ interface Project {
     Uren: string;
     Status: string;
     Start: string;
+    Omschrijving: string;
 }
 
 const Data: React.FC<BasicComponentProps> = ({ Title }) => {
     const [projects, setProjects] = useState<Project[]>([]);
+    const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+    const [showPopup, setShowPopup] = useState(false);
 
     const fetchCSVData = async () => {
         try {
@@ -35,6 +38,16 @@ const Data: React.FC<BasicComponentProps> = ({ Title }) => {
         fetchCSVData();
     }, []);
 
+    const handleRowClick = (project: Project) => {
+        setSelectedProject(project);
+        setShowPopup(true);
+    };
+
+    const handleClosePopup = () => {
+        setShowPopup(false);
+        setSelectedProject(null);
+    };
+
     return (
         <div className="StudentDataContainer">
             <div className="header">
@@ -48,17 +61,38 @@ const Data: React.FC<BasicComponentProps> = ({ Title }) => {
             </div>
             <hr className="line" />
             <div className="scrollableContainer">
-            {projects.map((project, index) => (
-                <div key={index} className="divData">
-                    <div className="column">{project.Naam}</div>
-                    <div className="column">{project.Uren}</div>
-                    <div className={`column ${project.Status === "Klaar" ? "klaar" : project.Status === "Bezig" ? "bezig" : ""}`}> {project.Status} </div>
-                    <div className="column">{project.Start}</div>
-                </div>
-            ))}
-            
-            <a href={"/aanmaak"} className="createButton">Aanmaken</a>
+                {projects.map((project, index) => (
+                    <div 
+                        key={index} 
+                        className="divData clickableRow" 
+                        onClick={() => handleRowClick(project)}
+                    >
+                        <div className="column">{project.Naam}</div>
+                        <div className="column">{project.Uren}</div>
+                        <div className={`column ${project.Status === "Klaar" ? "klaar" : project.Status === "Bezig" ? "bezig" : ""}`}>
+                            {project.Status}
+                        </div>
+                        <div className="column">{project.Start}</div>
+                    </div>
+                ))}
+
+                <a href={"/aanmaak"} className="createButton">Aanmaken</a>
             </div>
+
+            {showPopup && selectedProject && (
+                <div className="popupOverlay" onClick={handleClosePopup}>
+                    <div className="popupContent" onClick={(e) => e.stopPropagation()}>
+                        <h2>Project Details</h2>
+                        <p><strong>Naam:</strong> {selectedProject.Naam}</p>
+                        <p><strong>Uren:</strong>{selectedProject.Uren}</p>
+                        <p><strong>Status:</strong> {selectedProject.Status}</p>
+                        <p><strong>Start:</strong> {selectedProject.Start}</p>
+                        {selectedProject.Omschrijving && (
+                            <p><strong>Omschrijving:</strong> {selectedProject.Omschrijving}</p>
+                        )}
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

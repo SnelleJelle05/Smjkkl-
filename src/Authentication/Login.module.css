@@ -1,0 +1,197 @@
+/* Import Roboto from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+  overflow: hidden;
+  margin: 0;
+}
+
+/* Set Roboto as the global font */
+.login_background {
+  font-family: 'Roboto', sans-serif;
+  background-image: url('aventus_blurred_corrected.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: inherit;
+  background-size: inherit;
+  background-repeat: inherit;
+  background-position: inherit;
+  z-index: -1;
+
+}
+
+.container,
+.login-box,
+.input,
+.button,
+.register_text,
+.title,
+.link {
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login_box {
+  width: 350px;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+}
+
+.header {
+  position: absolute;
+  width: 350px;
+  height: 117px;
+  top: 130px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(85.36deg, #1C75E9 0%, #47A1F1 100%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+}
+
+.header h2 {
+  color: white;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.title {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form {
+  margin-top: 30%;
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  width: 93%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.slider_container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.slider_label {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 14px;
+  color: #666;
+  cursor: pointer;
+}
+
+.hidden_checkbox {
+  display: none;
+}
+
+.slider {
+  width: 42px;
+  height: 20px;
+  border-radius: 15px;
+  background-color: #ddd;
+  position: relative;
+  transition: background-color 0.3s;
+}
+
+.slider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 4px;
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  transition: left 0.3s;
+}
+
+.hidden_checkbox:checked+.slider {
+  background-color: #007BFF;
+}
+
+.hidden_checkbox:checked+.slider::before {
+  left: 24px;
+}
+
+.button {
+  margin-top: 25px;
+  width: 100%;
+  padding: 10px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  background: linear-gradient(85.36deg, #1C75E9 0%, #47A1F1 100%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+.register_text {
+  margin-top: 15px;
+  color: #666;
+}
+
+.link {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.footer {
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 22px;
+}
+
+.error_message {
+  color: red;
+  font-size: 14px;
+}
+
+.footer p {
+  color: #ffffff !important;
+}

@@ -13,11 +13,11 @@ export const AdminIndex = () => {
     return (
         <div className="container">
             <SideBar
-                title="Admin Page"
-                pageNames={["Studenten", "Archief", "uitloggen"]}
-                pageLinks={["#", "#", "#"]}
-                selectedPage={selectedPage}
-                onPageChange={handlePageChange}
+            title="Admin Page"
+            pageNames={["Studenten", "Archief", "uitloggen"]}
+            pageLinks={["#", "#", "/login"]}
+            selectedPage={selectedPage}
+            onPageChange={handlePageChange}
             />
 
             <Data Title="Alle Actieve Studenten" />

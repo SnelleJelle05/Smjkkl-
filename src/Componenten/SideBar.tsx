@@ -2,46 +2,29 @@ import React from 'react';
 import "../Assets/Css/SideBarCss.css";
 
 interface BasicComponentProps {
-    // Define your props here
-    title: string;
-    pageNames: string[];
-    pageLinks: string[];
-
+  title: string;
+  pageNames: string[];
+  pageLinks: string[];
+  selectedPage: number;
 }
 
+const SideBar: React.FC<BasicComponentProps> = ({ title, pageNames, pageLinks, selectedPage }) => {
+  return (
+    <div className="containerSideBar">
+      <h1 className="h1sidebar">{title}</h1>
+      <hr className="line" />
 
-const SideBar: React.FC<BasicComponentProps> = ({title, pageNames, pageLinks}) => {
-    return (
-        <>
-
-            <div className={"containerSideBar"}>
-
-                <h1 className="h1sidebar">{title}</h1>
-
-                <hr className={'line'}/>
-
-
-                <a href={pageLinks[0]} className={'selectedItem'}>
-                    <p className={'selectedText'}>{pageNames[0]}</p>
-                </a>
-
-
-                <a href={pageLinks[1]} className={'items'}>
-                    <p>{pageNames[1]}</p>
-                </a>
-
-                <a href={pageLinks[2]} className={'items'}>
-                    <p>{pageNames[2]}</p>
-                </a>
-
-                <a href={pageLinks[3]} className={'items'}>
-                    <p>{pageNames[3]}</p>
-                </a>
-
-            </div>
-
-        </>
-    );
+      {pageNames.map((name, index) => (
+        <a
+          key={index}
+          href={pageLinks[index]}
+          className={index === selectedPage ? 'selectedItem' : 'items'}
+        >
+          <p className={index === selectedPage ? 'selectedText' : ''}>{name}</p>
+        </a>
+      ))}
+    </div>
+  );
 };
 
 export default SideBar;

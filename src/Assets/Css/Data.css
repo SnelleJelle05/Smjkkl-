@@ -81,7 +81,7 @@
 .createButton {
     position: absolute;
     bottom: 20px;
-    right: 20px;
+    right: 30px;
     background: linear-gradient(to right, #1C75E9, #47A1F1);
     color: white;
     border: none;
@@ -101,6 +101,32 @@
 }
 
 .createButton:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.actionButton {
+    background: linear-gradient(to right, #1C75E9, #47A1F1);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 15px;
+    margin-right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: inline-block;
+}
+
+.actionButton:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.actionButton:active {
     transform: scale(0.95);
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }

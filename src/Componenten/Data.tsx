@@ -48,6 +48,10 @@ const Data: React.FC<BasicComponentProps> = ({ Title }) => {
         setSelectedProject(null);
     };
 
+    const uploadFiles = () => {
+        document.getElementById('file')?.click()
+    }
+
     return (
         <div className="StudentDataContainer">
             <div className="header">
@@ -75,8 +79,8 @@ const Data: React.FC<BasicComponentProps> = ({ Title }) => {
                         <div className="column">{project.Start}</div>
                     </div>
                 ))}
-
-                <a href={"/aanmaak"} className="createButton">Aanmaken</a>
+                <input type='file' id='file' style={{display: 'none'}}/>
+                <a onClick={() => uploadFiles()} className="createButton">Upload</a>
             </div>
 
             {showPopup && selectedProject && (

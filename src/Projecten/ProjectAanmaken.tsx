@@ -9,6 +9,7 @@ function ProjectAanmaken() {
                 title="BPV hulp tool"
                 pageNames={["Projecten", "Bestanden", "Logboek", "Uitloggen"]}
                 pageLinks={["#", "#", "#", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"]}
+                selectedPage={0}
             />
             <AanmakenFormulier Title="Maak een project aan" />
         </div>

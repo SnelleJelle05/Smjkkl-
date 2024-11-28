@@ -1,21 +1,21 @@
 import "../Assets/Css/Student.css";
 import SideBar from "../Componenten/SideBar";
-import Data from "../Componenten/Data";
+import Data from "../Componenten/FilesData";
 
-function StudentenIndex() {
+function FilesIndex() {
     return (
 
         <div className="container">
             <SideBar
                 title="BPV hulp tool"
                 pageNames={["Projecten", "Bestanden", "Logboek", "Uitloggen"]}
-                pageLinks={["#", "#", "#", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"]}
-                selectedPage={0}
+                pageLinks={["projecten", "files", "#", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"]}
+                selectedPage={1}
             />
 
-            <Data Title="Mijn projecten"/>
+            <Data Title="Mijn bestanden"/>
         </div>
     );
 }
 
-export default StudentenIndex;
+export default FilesIndex;

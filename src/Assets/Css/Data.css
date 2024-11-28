@@ -1,9 +1,10 @@
 .StudentDataContainer {
     background: #FFFFFF;
-    height: 95vh;
-    width:85vw;
+    height: 85vh;
+    width: 85vw;
     border-radius: 10px;
-    margin-left: 200px;
+    margin: 10px 0 0 200px;
+    overflow-y: auto;
 }
 .header{
     background: linear-gradient(to top right, #1C75E9, #47A1F1);

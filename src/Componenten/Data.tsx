@@ -83,12 +83,12 @@ const Data: React.FC<BasicComponentProps> = ({ Title }) => {
                 <div className="popupOverlay" onClick={handleClosePopup}>
                     <div className="popupContent" onClick={(e) => e.stopPropagation()}>
                         <h2>Project Details</h2>
-                        <p><strong>Naam:</strong> {selectedProject.Naam}</p>
-                        <p><strong>Uren:</strong>{selectedProject.Uren}</p>
-                        <p><strong>Status:</strong> {selectedProject.Status}</p>
-                        <p><strong>Start:</strong> {selectedProject.Start}</p>
+                        <p><strong>Naam: </strong> {selectedProject.Naam}</p>
+                        <p><strong>Uren: </strong>{selectedProject.Uren}</p>
+                        <p><strong>Status: </strong> {selectedProject.Status}</p>
+                        <p><strong>Start: </strong> {selectedProject.Start}</p>
                         {selectedProject.Omschrijving && (
-                            <p><strong>Omschrijving:</strong> {selectedProject.Omschrijving}</p>
+                            <p><strong>Omschrijving:  </strong> {selectedProject.Omschrijving}</p>
                         )}
                     </div>
                 </div>

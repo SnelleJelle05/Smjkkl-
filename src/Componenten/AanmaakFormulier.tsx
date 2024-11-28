@@ -9,12 +9,11 @@ const AanmakenFormulier: React.FC<BasicComponentProps> = ({ Title }) => {
     const [formValues, setFormValues] = useState({
         naam: '',
         uren: '',
-        status: 'Bezig', // Standaardwaarde is "Klaar"
+        status: 'Bezig',
         start: '',
         omschrijving: '',
     });
 
-    // Functie om invoervelden te verwerken
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
         setFormValues((prevValues) => ({
@@ -23,7 +22,6 @@ const AanmakenFormulier: React.FC<BasicComponentProps> = ({ Title }) => {
         }));
     };
 
-    // Functie om het formulier te verwerken
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         console.log('Formuliergegevens:', formValues);
@@ -90,9 +88,12 @@ const AanmakenFormulier: React.FC<BasicComponentProps> = ({ Title }) => {
                     />
                 </label>
 
-                <button type="submit" className="submitButton">
+                <a href="/" className="submitButton">
                     Verzenden
-                </button>
+                </a>
+                <a href="/" className="cancelButton">
+                    Terug
+                </a>
             </form>
         </div>
     );

@@ -54,17 +54,35 @@ textarea {
 }
 
 .submitButton {
-    padding: 10px 20px;
-    background-color: #1C75E9;
+    padding: 10px 20px; 
+    background-image: linear-gradient(to right, #1C75E9, #47A1F1);
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     font-size: 16px;
     cursor: pointer;
 }
 
+
+
 .submitButton:hover {
-    background-color: #145CB3;
+    background-image: linear-gradient(to left, #1C74D8, #4295DD);
+    transform: scale(1.05);
+}
+
+.cancelButton {
+    padding: 10px 20px; 
+    background-image: linear-gradient(to right, #EF2A2A, #A91E1E);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.cancelButton:hover {
+    background-image: linear-gradient(to left, #DD2727, #961B1B);
+    transform: scale(1.05);
 }
 
 select {

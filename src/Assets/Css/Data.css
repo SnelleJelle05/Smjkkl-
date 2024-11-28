@@ -70,12 +70,12 @@
 .klaar{
     border-radius: 10px;
     background-image: linear-gradient(to right, #41F12A, #2EA81D);
-    color: #000000;
+    color: #FFFFFF;
 }
 .bezig{
     border-radius: 10px;
     background-image: linear-gradient(to right, #F19E2A, #A86E1D);
-    color: #000000;
+    color: #FFFFFF;
 }
 
 .createButton {

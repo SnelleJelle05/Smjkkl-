@@ -171,6 +171,7 @@ body::before {
 }
 
 .link {
+  margin-left: 10px;
   color: #007BFF;
   text-decoration: none;
 }

@@ -15,7 +15,7 @@ const StudentInformation: React.FC = () => {
     const location = useLocation();
     const navigate = useNavigate();
 
-    // Access student data from location state
+    // krijgt student data van location state
     const student = location.state as Student;
 
     // Handle form submission
@@ -23,13 +23,14 @@ const StudentInformation: React.FC = () => {
         event.preventDefault();
         console.log("Updated Student Information:", student);
         alert("Student information updated!");
-        navigate(-1); // Navigate back
+        navigate(-1); // navigeer back
     };
 
     return (
         <div className="student-information-container">
             <h1 className="student-information-title">Student Information</h1>
             <form onSubmit={handleSubmit} className="student-information-form">
+                {/* data */}
                 <div className="form-group">
                     <label htmlFor="studentEmail" className="form-label">
                         Student Email:
@@ -37,7 +38,7 @@ const StudentInformation: React.FC = () => {
                     <input
                         type="email"
                         id="studentEmail"
-                        defaultValue={student?.Student}
+                        defaultValue={student?.Student} // set de data van de student zelfde is waar voor de rest
                         className="form-input"
                         required
                     />

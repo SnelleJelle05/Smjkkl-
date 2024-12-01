@@ -43,7 +43,6 @@
 .form-input:focus {
     border-color: #1C75E9;
     outline: none;
-    box-shadow: 0 0 4px rgba(76, 175, 80, 0.5);
 }
 
 .form-button {

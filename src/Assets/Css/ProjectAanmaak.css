@@ -59,6 +59,11 @@ textarea {
     color: white;
     border: none;
     border-radius: 10px;
+    padding: 10px 20px;
+    background-color: #1C75E9;
+    color: white;
+    border: none;
+    border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
 }
@@ -83,6 +88,10 @@ textarea {
 .cancelButton:hover {
     background-image: linear-gradient(to left, #DD2727, #961B1B);
     transform: scale(1.05);
+}
+
+.submitButton:hover {
+    background-color: #145CB3;
 }
 
 select {

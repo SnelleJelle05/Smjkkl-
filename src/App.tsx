@@ -7,6 +7,7 @@ import ProjectenIndex from './Projecten/ProjectenIndex';
 import ProjectAanmaken from './Projecten/ProjectAanmaken';
 import StudentInformation from './Admin/StudentInformation';
 import AdminIndex from './Admin/AdminIndex';
+import FilesIndex from './Files/FilesIndex';
 
 export const App = () => {
   return (
@@ -20,6 +21,7 @@ export const App = () => {
         <Route path="/ProjectenIndex" element={<ProjectenIndex />} />
         <Route path="/AanmaakFormulier" element={<ProjectAanmaken />} />
         <Route path="/student-information" element={<StudentInformation/>} />
+        <Route path="/files" element={<FilesIndex />} />
       </Routes>
     </Router>
   );

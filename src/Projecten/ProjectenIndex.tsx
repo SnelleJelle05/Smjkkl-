@@ -1,8 +1,8 @@
 import "../Assets/Css/Student.css";
 import SideBar from "../Componenten/SideBar";
-import Data from "../Componenten/Data";
+import MijnProjecten from "../Componenten/MijnProjecten";
 
-function StudentenIndex() {
+function ProjectenIndex() {
     return (
 
         <div className="container">
@@ -12,9 +12,9 @@ function StudentenIndex() {
                 pageLinks={["#", "#", "#", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"]}
             />
 
-            <Data Title="Mijn projecten"/>
+            <MijnProjecten Title="Mijn projecten"/>
         </div>
     );
 }
 
-export default StudentenIndex;
+export default ProjectenIndex;

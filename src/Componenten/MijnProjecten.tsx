@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Papa from 'papaparse';
-import "../Assets/Css/Data.css";
+import "../Assets/Css/MijnProjecten.css";
 
 interface BasicComponentProps {
     Title: string;
@@ -14,7 +14,7 @@ interface Project {
     Omschrijving: string;
 }
 
-const Data: React.FC<BasicComponentProps> = ({ Title }) => {
+const MijnProjecten: React.FC<BasicComponentProps> = ({ Title }) => {
     const [projects, setProjects] = useState<Project[]>([]);
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
     const [showPopup, setShowPopup] = useState(false);
@@ -97,4 +97,4 @@ const Data: React.FC<BasicComponentProps> = ({ Title }) => {
     );
 };
 
-export default Data;
+export default MijnProjecten;

@@ -9,7 +9,7 @@ function FilesIndex() {
             <SideBar
                 title="BPV hulp tool"
                 pageNames={["Projecten", "Bestanden", "Logboek", "Uitloggen"]}
-                pageLinks={["projecten", "files", "#", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"]}
+                pageLinks={["projecten", "files", "#", "#"]}
                 selectedPage={1}
             />
 

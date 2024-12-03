@@ -8,10 +8,6 @@ const Logbook = () => {
     notities: "",
   });
 
-  function pasaan(){
-    alert('logboek is aangepast')
-  }
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setLogbook({
@@ -26,6 +22,15 @@ const Logbook = () => {
     // Hier kun je de logboekdata opsturen naar een API of opslaan in lokale opslag
     setLogbook({ uren: "", datum: "", activiteit: "", notities: "" });
   };
+
+  function pasaan(){
+    if (logbook =! "") {
+        alert('logboek is aangepast')
+    }else{
+        alert('vul het formulier in')
+    }
+    
+  }
 
   return (
     <div style={{ padding: "20px", maxWidth: "600px", margin: "auto" }}>

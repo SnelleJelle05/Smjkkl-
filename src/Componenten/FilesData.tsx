@@ -61,12 +61,21 @@ const Data: React.FC<BasicComponentProps> = ({ Title }) => {
             if(files.length > 0) {
                 newFileId = (Number(files[files.length - 1].fileId) + 1).toString()
             }
+            const date = new Date();
+            const formattedDate = new Intl.DateTimeFormat('nl-NL', {
+              day: '2-digit',
+              month: '2-digit',
+              year: 'numeric',
+              hour: '2-digit',
+              minute: '2-digit',
+              hourCycle: 'h23' // For 24-hour format
+            }).format(date).replace(',', ''); // Remove the comma
             const newFile: Bestand = {
                 fileId: newFileId,
                 fileName: file.name,
                 fileSize: formatFileSize(file.size),
                 Status: "Nieuw",
-                lastChanged: new Date().toLocaleString("nl-NL"),
+                lastChanged: formattedDate,
             };
 
             setFiles([...files, newFile]);

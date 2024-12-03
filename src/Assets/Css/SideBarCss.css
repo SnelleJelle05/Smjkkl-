@@ -1,48 +1,49 @@
 .containerSideBar {
-    background: #FFFFFF;
-    height: 95vh;
-    width: 10vw;
-    position: fixed;
-    left: 0 ;
-    border-radius: 10px;
-    margin-left: 10px;
+  background: #ffffff;
+  height: 95vh;
+  width: 10vw;
+  position: fixed;
+  left: 0;
+  border-radius: 10px;
+  margin-left: 10px;
 }
 
-.h1sidebar{
-    font-size: 16px;
-    color: #000000;
-    display: flex;
-    margin-top: 10px;
-    justify-content: center;
-    font-weight: normal;
+.h1sidebar {
+  font-size: 16px;
+  color: #000000;
+  display: flex;
+  margin-top: 10px;
+  justify-content: center;
+  font-weight: normal;
 }
 
-.line{
-    width: 75%;
-    height: 1px;
-    background: #000000;
-    margin: 10px auto;
+.line {
+  width: 75%;
+  height: 1px;
+  background: #000000;
+  margin: 10px auto;
 }
 
-
-.items{
-    margin: 20px auto auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 15px;
-    width: 8vw;
-    text-decoration: none;
+.items {
+  width: 200px;
+  hight: 57px;
+  margin: 20px auto auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5 5px 10px rgba(1, 1, 0, 0.5);
+  border-radius: 15px;
+  width: 8vw;
+  text-decoration: none;
 }
 
-p{
-    display: flex;
-    justify-content: center;
-    color: black;
+p {
+  display: flex;
+  justify-content: center;
+  color: black;
 }
 
 .selected {
-    background: linear-gradient(to top right, #1C75E9, #47A1F1);
-    color: white;
+  background: linear-gradient(to top right, #1c75e9, #47a1f1);
+  color: white;
 }

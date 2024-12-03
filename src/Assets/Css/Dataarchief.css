@@ -1,0 +1,56 @@
+.StudentDataContainer {
+  background: #ffffff;
+  height: 95vh;
+  width: 85vw;
+  border-radius: 10px;
+  margin-left: 200px;
+}
+.header {
+  background: linear-gradient(to top right, #1c75e9, #47a1f1);
+  height: 10vh;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.h1Data {
+  margin: auto auto auto;
+  color: white;
+  text-align: center;
+  align-items: center;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.studenten {
+  display: block;
+  flex-wrap: wrap;
+  gap: 2px;
+  margin-top: 20px;
+  justify-content: space-evenly;
+}
+
+.student {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  width: 95%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.student h2 {
+  margin-bottom: 10px;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.info p {
+  margin: 0;
+}

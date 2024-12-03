@@ -2,13 +2,8 @@ import React, { useState } from "react";
 import "../Assets/Css/admin.css";
 import { SideBar } from "../Componenten/SideBar";
 import Data from "../Componenten/Dataarchief";
-interface Student {
-    id: number;
-    naam: string;
-    uren: number;
-    datum: Date;
-}
-export const AdminIndex = () => {
+
+export const Archief = () => {
     const [selectedPage, setSelectedPage] = useState(0);
 
     const handlePageChange = (pageIndex: number) => {
@@ -18,12 +13,14 @@ export const AdminIndex = () => {
     return (
         <div className="container">
             <SideBar
-                title="Admin Page"
+                title="Docent {naam}"
                 pageNames={["Studenten", "Archief", "uitloggen"]}
-                pageLinks={["#", "#", "/login"]}
+                pageLinks={["#", "/Archief", "/login"]}
                 selectedPage={selectedPage}
                 onPageChange={handlePageChange}
             />
+
+            <Data Title="Alle Actieve Studenten" />
         </div>
     );
 }

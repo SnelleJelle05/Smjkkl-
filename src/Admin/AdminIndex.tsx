@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "../Assets/Css/admin.css";
 import { SideBar } from "../Componenten/SideBar";
 import Data from "../Componenten/Data";
+import StudentsTable from "../Componenten/StudendsTable";
 
-export const AdminIndex = () => {
+const AdminIndex = () => {
     const [selectedPage, setSelectedPage] = useState(0);
 
     const handlePageChange = (pageIndex: number) => {
@@ -20,7 +21,12 @@ export const AdminIndex = () => {
             onPageChange={handlePageChange}
             />
 
-            <Data Title="Alle Actieve Studenten" />
+                <Data
+                    Title="Alle Actieve Studenten"
+                    Data={<StudentsTable />}
+                />
         </div>
     );
 }
+
+export default AdminIndex;

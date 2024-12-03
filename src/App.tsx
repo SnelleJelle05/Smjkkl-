@@ -2,10 +2,11 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { LoginPage } from './Authentication/Login';
 import { RegisterPage } from './Authentication/Register';
-import { AdminIndex } from './Admin/AdminIndex';
 import { DashboardPage } from './Dashboard/Dashboard';
 import ProjectenIndex from './Projecten/ProjectenIndex';
 import ProjectAanmaken from './Projecten/ProjectAanmaken';
+import StudentInformation from './Admin/StudentInformation';
+import AdminIndex from './Admin/AdminIndex';
 
 export const App = () => {
   return (
@@ -18,6 +19,7 @@ export const App = () => {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/ProjectenIndex" element={<ProjectenIndex />} />
         <Route path="/AanmaakFormulier" element={<ProjectAanmaken />} />
+        <Route path="/student-information" element={<StudentInformation/>} />
       </Routes>
     </Router>
   );

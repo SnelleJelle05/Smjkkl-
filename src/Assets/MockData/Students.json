@@ -1,0 +1,72 @@
+[
+  {
+    "Student": "jan.jansen@student.aventus.nl",
+    "Uren": 142,
+    "BPV": 1,
+    "BeginDatum": "2024-01-14",
+    "Status": "Actief"
+  },
+  {
+    "Student": "sophie.vanbeek@student.aventus.nl",
+    "Uren": 120,
+    "BPV": 2,
+    "BeginDatum": "2024-01-20",
+    "Status": "Gearchiveerd"
+  },
+  {
+    "Student": "lucas.devries@student.aventus.nl",
+    "Uren": 101,
+    "BPV": 1,
+    "BeginDatum": "2024-11-12",
+    "Status": "Gearchiveerd"
+  },
+  {
+    "Student": "emma.smit@student.aventus.nl",
+    "Uren": 431,
+    "BPV": 1,
+    "BeginDatum": "2024-02-26",
+    "Status": "Actief"
+  },
+  {
+    "Student": "noah.kuipers@student.aventus.nl",
+    "Uren": 703,
+    "BPV": 2,
+    "BeginDatum": "2022-10-10",
+    "Status": "Gearchiveerd"
+  },
+  {
+    "Student": "fleur.degraaf@student.aventus.nl",
+    "Uren": 315,
+    "BPV": 2,
+    "BeginDatum": "2023-05-15",
+    "Status": "Actief"
+  },
+  {
+    "Student": "mees.bakker@student.aventus.nl",
+    "Uren": 220,
+    "BPV": 1,
+    "BeginDatum": "2023-09-01",
+    "Status": "Actief"
+  },
+  {
+    "Student": "lisa.vandam@student.aventus.nl",
+    "Uren": 89,
+    "BPV": 2,
+    "BeginDatum": "2023-03-10",
+    "Status": "Gearchiveerd"
+  },
+  {
+    "Student": "thomas.jager@student.aventus.nl",
+    "Uren": 144,
+    "BPV": 1,
+    "BeginDatum": "2024-06-18",
+    "Status": "Actief"
+  },
+  {
+    "Student": "zoe.mees@student.aventus.nl",
+    "Uren": 356,
+    "BPV": 2,
+    "BeginDatum": "2022-08-12",
+    "Status": "Gearchiveerd"
+  }
+]

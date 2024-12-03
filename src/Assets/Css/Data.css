@@ -80,8 +80,8 @@
 
 .createButton {
     position: absolute;
-    bottom: 20px;
-    right: 30px;
+    bottom: 30px;
+    right: 40px;
     background: linear-gradient(to right, #1C75E9, #47A1F1);
     color: white;
     border: none;
@@ -155,4 +155,13 @@
 .clickableRow:hover {
     cursor: pointer;
     background-color: #f1f1f1;
+}
+
+.scrollableContainerFiles {
+    overflow-y: auto;
+    background: #FFFFFF;
+    height: 71%;
+    width: 85vw;
+    border-radius: 10px;
+    width: 100%;
 }

@@ -7,6 +7,7 @@ interface BasicComponentProps {
 }
 
 interface Bestand {
+    fileId: string;
     fileName: string;
     fileSize: string;
     Status: string;
@@ -15,8 +16,8 @@ interface Bestand {
 }
 
 const Data: React.FC<BasicComponentProps> = ({ Title }) => {
-    const [projects, setProjects] = useState<Bestand[]>([]);
-    const [selectedProject, setSelectedProject] = useState<Bestand | null>(null);
+    const [files, setFiles] = useState<Bestand[]>([]);
+    const [selectedFile, setSelectedFile] = useState<Bestand | null>(null);
     const [showPopup, setShowPopup] = useState(false);
 
     // Fetch data from CSV
@@ -29,7 +30,7 @@ const Data: React.FC<BasicComponentProps> = ({ Title }) => {
                 header: true,
                 skipEmptyLines: true,
             });
-            setProjects(parsed.data);
+            setFiles(parsed.data);
         } catch (error) {
             console.error("Error fetching or parsing CSV:", error);
         }
@@ -39,14 +40,14 @@ const Data: React.FC<BasicComponentProps> = ({ Title }) => {
         fetchCSVData();
     }, []);
 
-    const handleRowClick = (project: Bestand) => {
-        setSelectedProject(project);
+    const handleRowClick = (file: Bestand) => {
+        setSelectedFile(file);
         setShowPopup(true);
     };
 
     const handleClosePopup = () => {
         setShowPopup(false);
-        setSelectedProject(null);
+        setSelectedFile(null);
     };
 
     const uploadFiles = () => {
@@ -56,14 +57,19 @@ const Data: React.FC<BasicComponentProps> = ({ Title }) => {
     const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const file = event.target.files?.[0];
         if (file) {
+            let newFileId = '1';
+            if(files.length > 0) {
+                newFileId = (Number(files[files.length - 1].fileId) + 1).toString()
+            }
             const newFile: Bestand = {
+                fileId: newFileId,
                 fileName: file.name,
                 fileSize: formatFileSize(file.size),
                 Status: "Nieuw",
                 lastChanged: new Date().toLocaleString("nl-NL"),
             };
 
-            setProjects([...projects, newFile]);
+            setFiles([...files, newFile]);
             event.target.value = "";
         }
     };
@@ -74,13 +80,10 @@ const Data: React.FC<BasicComponentProps> = ({ Title }) => {
         return `${(size / (1024 * 1024)).toFixed(2)} MB`;
     };
 
-    const handleDelete = (fileName: string) => {
-        // Filter out the project with the given fileName
-        const updatedProjects = projects.filter(project => project.fileName !== fileName);
-        setProjects(updatedProjects);
-
-        // Simulate CSV update (server update would be needed for real persistence)
-        console.log(`Deleted: ${fileName}`);
+    const handleDelete = (fileId: string) => {
+        // Filter out the file with the given fileName
+        const updatedfiles = files.filter(file => file.fileId !== fileId);
+        setFiles(updatedfiles);
     };
 
     return (
@@ -95,24 +98,24 @@ const Data: React.FC<BasicComponentProps> = ({ Title }) => {
                 <div>Acties</div>
             </div>
             <hr className="line" />
-            <div className="scrollableContainer">
-                {projects.map((project, index) => (
+            <div className="scrollableContainerFiles">
+                {files.map((file, index) => (
                     <div 
                         key={index} 
                         className="divData clickableRow"
                     >
-                        <div className="column" onClick={() => handleRowClick(project)}>
-                            {project.fileName}
+                        <div className="column" onClick={() => handleRowClick(file)}>
+                            {file.fileName}
                         </div>
-                        <div className="column">{project.fileSize}</div>
-                        <div className="column">{project.lastChanged}</div>
+                        <div className="column">{file.fileSize}</div>
+                        <div className="column">{file.lastChanged}</div>
                         <div className="column actions">
                             <a className="actionButton">
                                 <img width="30" src="/Assets/PNG/downloads.png" />
                             </a>
                             <a 
                                 className="actionButton" 
-                                onClick={() => handleDelete(project.fileName)}
+                                onClick={() => handleDelete(file.fileId)}
                             >
                                 <img width="30" src="/Assets/PNG/delete.png" />
                             </a>
@@ -123,13 +126,13 @@ const Data: React.FC<BasicComponentProps> = ({ Title }) => {
                 <a onClick={() => uploadFiles()} className="createButton">Upload</a>
             </div>
 
-            {showPopup && selectedProject && (
+            {showPopup && selectedFile && (
                 <div className="popupOverlay" onClick={handleClosePopup}>
                     <div className="popupContent" onClick={(e) => e.stopPropagation()}>
                         <h2>Bestand Details</h2>
-                        <p><strong>Bestandsnaam:&nbsp;</strong> {selectedProject.fileName}</p>
-                        <p><strong>Bestandsgrootte:&nbsp;</strong>{selectedProject.fileSize}</p>
-                        <p><strong>Laatst gewijzigd:&nbsp;</strong> {selectedProject.lastChanged}</p>
+                        <p><strong>Bestandsnaam:&nbsp;</strong> {selectedFile.fileName}</p>
+                        <p><strong>Bestandsgrootte:&nbsp;</strong>{selectedFile.fileSize}</p>
+                        <p><strong>Laatst gewijzigd:&nbsp;</strong> {selectedFile.lastChanged}</p>
                     </div>
                 </div>
             )}

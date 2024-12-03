@@ -8,6 +8,10 @@ const Logbook = () => {
     notities: "",
   });
 
+  function pasaan(){
+    alert('logboek is aangepast')
+  }
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setLogbook({
@@ -83,6 +87,7 @@ const Logbook = () => {
             <button
                 type="submit"
                 className="logboek-aan-pas"
+                onClick={pasaan}
             >
                 Pas logboek aan
             </button>

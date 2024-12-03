@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './logboek.css';
 
 const Logbook = () => {
   const [logbook, setLogbook] = useState({

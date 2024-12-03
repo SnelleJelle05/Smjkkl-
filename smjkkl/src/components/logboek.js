@@ -24,7 +24,7 @@ const Logbook = () => {
   };
 
   function pasaan(){
-    if (logbook =! "") {
+    if (logbook !== "") {
         alert('logboek is aangepast')
     }else{
         alert('vul het formulier in')
@@ -38,7 +38,7 @@ const Logbook = () => {
             <h1>Mijn Logboek</h1>
         </div>
         <form onSubmit={handleSubmit} className="logboekform">
-            <div className="uren">
+            <div className="box">
                 <label>Uren:</label>
                 <input
                     type="number"
@@ -46,11 +46,11 @@ const Logbook = () => {
                     value={logbook.uren}
                     onChange={handleChange}
                     required
-                    className="uren-input"
+                    className="input"
                 />
             </div>
 
-            <div className="Datum">
+            <div className="box">
                 <label>Datum:</label>
                 <input
                     type="date"
@@ -58,18 +58,18 @@ const Logbook = () => {
                     value={logbook.datum}
                     onChange={handleChange}
                     required
-                    className="datum-input"
+                    className="input"
                 />
             </div>
 
-            <div className="gewerkt">
+            <div className="box">
                 <label>Waaraan gewerkt:</label>
                 <select
                     name="activiteit"
                     value={logbook.activiteit}
                     onChange={handleChange}
                     required
-                    className="gewerkt-select"
+                    className="input"
                 >
                     <option value="">Selecteer...</option>
                     <option value="Project 1">Project 1</option>
@@ -78,14 +78,14 @@ const Logbook = () => {
                 </select>
             </div>
 
-            <div className="notities">
+            <div className="box">
                 <label>Eventuele notities:</label>
                 <textarea
                     name="notities"
                     value={logbook.notities}
                     onChange={handleChange}
                     rows="4"
-                    className="notities-area"
+                    className="input"
                 ></textarea>
             </div>
 

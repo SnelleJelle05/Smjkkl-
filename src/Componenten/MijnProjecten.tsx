@@ -76,7 +76,7 @@ const MijnProjecten: React.FC<BasicComponentProps> = ({ Title }) => {
                     </div>
                 ))}
 
-                <a href={"/aanmaak"} className="createButton">Aanmaken</a>
+                <a href={"/AanmaakFormulier"} className="createButton">Aanmaken</a>
             </div>
 
             {showPopup && selectedProject && (
